@@ -6,6 +6,12 @@ import { findRecord } from '../lib/find-record.js';
  * Receives workflow/agent execution requests and returns the found record
  */
 export default async function handler(req, res) {
+  // #region agent log
+  try {
+    fetch('http://127.0.0.1:7790/ingest/4f654b4b-d027-43ae-8949-efd104da3159',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'6de2e5'},body:JSON.stringify({sessionId:'6de2e5',location:'api/find-record.js:handler-entry',message:'Request received',data:{method:req?.method,hasBody:!!req?.body},hypothesisId:'A',timestamp:Date.now()})}).catch(()=>{});
+  } catch (_) {}
+  // #endregion
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

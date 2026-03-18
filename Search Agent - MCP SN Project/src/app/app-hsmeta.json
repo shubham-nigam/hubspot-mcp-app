@@ -1,16 +1,19 @@
 {
-  "uid": "get_started_app",
+  "uid": "search_agent_mcp_sn_app",
   "type": "app",
   "config": {
-    "description": "A basic static token app for testing",
-    "name": "eXprealty - Shubham Nigam",
+    "description": "Find Record workflow action and agent tool - find any HubSpot CRM record by unique identifier",
+    "name": "Search Agent - MCP SN Project",
     "distribution": "private",
     "auth": {
       "type": "static",
       "requiredScopes": [
         "oauth",
         "crm.objects.contacts.read",
-        "crm.objects.contacts.write",
+        "crm.objects.companies.read",
+        "crm.objects.deals.read",
+        "crm.objects.leads.read",
+        "crm.schemas.custom.read",
         "tickets"
       ],
       "optionalScopes": [],
